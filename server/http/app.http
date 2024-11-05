@@ -1,0 +1,31 @@
+@url=http://localhost:4000/api/admin
+
+### Obtener todos los datos de la API
+GET {{url}}
+
+### Obtener un producto de la API
+GET {{url}}/2000
+
+### Enviar datos a la API (crear un producto)
+POST {{url}}
+Content-Type: application/json
+
+{
+  "name":"Pantalla grande",
+  "price":500
+}
+
+### Actualizar estado (available)
+PATCH {{url}}/2
+
+### Actualizar producto
+PUT {{url}}/1
+Content-Type: application/json
+
+{
+  "name":"Pantalla Actualizada",
+  "price":0
+}
+
+### Obtener un producto para eliminarlo
+DELETE {{url}}/7
