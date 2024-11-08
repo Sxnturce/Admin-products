@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import { Producto } from "../types";
+import ProductDetails from "../components/ProductDetails";
 
 function Home() {
+	const data = useLoaderData() as Producto[];
+
 	return (
 		<>
 			<div className="flex justify-between items-center">
@@ -13,6 +17,24 @@ function Home() {
 				>
 					Agregar producto
 				</Link>
+			</div>
+
+			<div className="p-2">
+				<table className="w-full mt-5 table-auto">
+					<thead className="bg-slate-800 text-white">
+						<tr>
+							<th className="p-2">Producto</th>
+							<th className="p-2">Precio</th>
+							<th className="p-2">Disponibilidad</th>
+							<th className="p-2">Acciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						{data.map((d) => (
+							<ProductDetails key={d.id} item={d} />
+						))}
+					</tbody>
+				</table>
 			</div>
 		</>
 	);
