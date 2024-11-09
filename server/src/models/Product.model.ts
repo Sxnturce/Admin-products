@@ -7,7 +7,7 @@ class Product extends Model {
 	@Column({
 		type: DataType.STRING(100),
 	})
-	name: string;
+	declare name: string;
 
 	@Column({
 		type: DataType.DECIMAL(6, 2),
@@ -16,13 +16,13 @@ class Product extends Model {
 			return value !== null ? parseFloat(value) : null;
 		},
 	})
-	price: number;
+	declare price: number;
 
 	@Default(true)
 	@Column({
 		type: DataType.BOOLEAN,
 	})
-	available: boolean;
+	declare available: boolean;
 }
 
 export default Product;

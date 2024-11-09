@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ### Actualizar estado (available)
-PATCH {{url}}/2
+PATCH {{url}}/19
 
 ### Actualizar producto
 PUT {{url}}/1
